@@ -8,6 +8,8 @@ RUN echo "http://dl-4.alpinelinux.org/alpine/v3.10/main" >> /etc/apk/repositorie
 # install chromedriver
 RUN apk update && apk add chromium chromium-chromedriver
 
+COPY . /app
+
 # install requirements
 RUN pip install --upgrade pip && pip uninstall numpy && pip install -r requirements.txt
 
